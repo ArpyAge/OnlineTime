@@ -23,9 +23,7 @@ public class OnlineTimeCommand extends Command {
     @Override
     public boolean handle(GameClient gameClient, String[] strings) throws Exception {
         Integer onlineTime = 0;
-
-        if(habbo.getHabboStats().blockFriendRequests)
-
+        
         if (!gameClient.getHabbo().getHabboStats().cache.containsKey(ONLLINE_KEY))
         {
             try (Connection connection = Emulator.getDatabase().getDataSource().getConnection(); PreparedStatement statement = connection.prepareStatement("SELECT online_time FROM users_settings WHERE user_id = ? LIMIT 1")) {
